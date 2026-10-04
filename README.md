@@ -16,4 +16,4 @@ The platform list covers macOS Apple Silicon/Intel, Windows x64, Linux x64/ARM64
 
 ## Deployment
 
-The production domain is `taskasaur.net`, served through Cloudflare. The `main` branch holds the static site. GitHub Pages is not enabled on this repository; `CNAME` records the public domain but does not by itself configure hosting. Verify the production site after pushing changes to the connected deployment branch.
+The production domain is `taskasaur.net`, served by the Cloudflare Worker `taskasaurwebsite`. Pushing `main` automatically starts its connected Workers Build; verify the GitHub check and public domain afterward. GitHub Pages is not enabled. `CNAME` records the public domain but does not itself configure hosting.
