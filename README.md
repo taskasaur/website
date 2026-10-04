@@ -1,24 +1,19 @@
-# Taskasaur Website
+# Taskasaur website
 
-The public homepage for [Taskasaur](https://taskasaur.net), a local-first app for bringing tasks, time tracking, and focus into one CSDB-backed workspace.
+The public homepage for [Taskasaur](https://taskasaur.net): an offline workspace with independent devices, approved peer synchronization, portable `.taskasaur` files, and installable plugins.
 
-The site is a dependency-free static homepage:
+This is a dependency-free static site. `index.html` contains the content, `styles.css` the responsive layout, `script.js` the existing product animations and dinosaur game, and `releases.js` the download discovery. Images are local assets.
 
-- `index.html` contains the page structure and content.
-- `styles.css` contains the responsive visual design and animations.
-- `script.js` contains the interactive product graphics and dinosaur game.
-- Image assets live alongside the page files.
+## Preview
 
-## Local preview
+Serve the repository with any static HTTP server, for example `python3 -m http.server 8081`, then open `http://localhost:8081`.
 
-From the repository root:
+## Releases
 
-```bash
-python3 -m http.server 8080
-```
+The main app's existing command `make release version=dev` creates an immutable dated SemVer prerelease. This site's Downloads section reads the public GitHub Releases API and links to the latest completed dev release's actual assets. It does not guess download URLs or need a token. Results are cached in session storage for five minutes. API failure and JavaScript-disabled browsers retain links to the GitHub releases list.
 
-Then open `http://localhost:8080`.
+The platform list covers macOS Apple Silicon/Intel, Windows x64, Linux x64/ARM64, Android, unsigned iOS and Apple Silicon simulator builds, a static web bundle, a pinned Docker Compose file, and checksums. The app repository documents signing and platform limitations in [docs/releases.md](https://github.com/taskasaur/taskasaur/blob/main/docs/releases.md).
 
 ## Deployment
 
-GitHub Pages serves the `main` branch from the repository root. The committed `CNAME` file connects the site to `taskasaur.net`.
+The production domain is `taskasaur.net`, served through Cloudflare. The `main` branch holds the static site. GitHub Pages is not enabled on this repository; `CNAME` records the public domain but does not by itself configure hosting. Verify the production site after pushing changes to the connected deployment branch.

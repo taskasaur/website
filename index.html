@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Taskasaur brings every task source, time tracking, and focus into one private CSDB-backed workspace." />
+    <meta name="description" content="A workspace that goes with you. Work offline, sync approved devices, install plugins, and keep everything in an internal workspace or portable .taskasaur file." />
     <meta name="theme-color" content="#ffffff" />
-    <title>Taskasaur — Track tasks from everywhere</title>
+    <title>Taskasaur — A workspace that goes with you</title>
     <link rel="icon" href="taskasaur_icon.png" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
+    <script src="releases.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -17,7 +18,7 @@
         <span>Taskasaur</span>
       </a>
       <nav aria-label="Main navigation">
-        <a class="nav-download" href="https://github.com/taskasaur/taskasaur/releases/latest">Download</a>
+        <a class="nav-download" href="#downloads">Download dev build</a>
         <a class="nav-source" href="https://github.com/taskasaur/taskasaur">View source</a>
       </nav>
     </header>
@@ -25,69 +26,76 @@
     <main id="top">
       <section class="hero page-section" data-accent="#0b2f4a">
         <div class="hero-copy">
-          <p class="kicker">Track, Tasks, Focus</p>
-          <h1>Track tasks from everywhere</h1>
-          <p class="lede">Taskasaur brings the task systems you already use into a single view, connects them to the time you spend, and helps you protect focused work.</p>
+          <p class="kicker">Your work, on your devices</p>
+          <h1>A workspace that goes with you.</h1>
+          <p class="lede">Tasks, time, files, and the tools you choose. Work offline, synchronize with approved devices, and carry your workspace in a single .taskasaur file.</p>
           <div class="actions">
-            <a class="button primary" href="https://github.com/taskasaur/taskasaur/releases/latest">Download latest release</a>
+            <a class="button primary" href="#downloads">Get the dev release</a>
             <a class="button quiet" href="https://github.com/taskasaur/taskasaur">View source</a>
           </div>
-          <p class="platforms">macOS · iOS · Windows · Android · Linux</p>
+          <p class="platforms">macOS · Windows · Linux · Android · iOS · Web</p>
         </div>
         <div class="hero-dino" aria-label="Taskasaur dinosaur mascot"><span></span><img src="taskasaur_icon.png" alt="Taskasaur dinosaur" draggable="false" /></div>
+      </section>
+
+      <section class="downloads page-section" id="downloads" aria-labelledby="downloads-title" data-accent="#123f60">
+        <div class="section-heading"><p class="kicker">Development release</p><h2 id="downloads-title">Try the current Taskasaur.</h2><p>Development builds are for testing the rebuilt app. Save a workspace backup before upgrading.</p></div>
+        <div class="release-heading"><p id="release-status" role="status">Find the latest development build and all downloads on GitHub.</p><a id="release-link" class="text-link" href="https://github.com/taskasaur/taskasaur/releases">All GitHub releases →</a></div>
+        <div class="download-grid">
+          <article><h3>macOS</h3><p>Apple Silicon and Intel. Development builds are not notarized.</p><div data-platform="mac"><a href="https://github.com/taskasaur/taskasaur/releases">View macOS builds →</a></div></article>
+          <article><h3>Windows</h3><p>x64 installer. Development builds are not publisher-signed.</p><div data-platform="windows"><a href="https://github.com/taskasaur/taskasaur/releases">View Windows builds →</a></div></article>
+          <article><h3>Linux</h3><p>x64 and ARM64, with AppImage and Debian packages.</p><div data-platform="linux"><a href="https://github.com/taskasaur/taskasaur/releases">View Linux builds →</a></div></article>
+          <article><h3>Android</h3><p>Sideload the APK. Dev updates use the same development signing key.</p><div data-platform="android"><a href="https://github.com/taskasaur/taskasaur/releases">View Android builds →</a></div></article>
+          <article><h3>iOS</h3><p>The device build requires your own Apple signing. The simulator build runs in Xcode on Apple Silicon.</p><div data-platform="ios"><a href="https://github.com/taskasaur/taskasaur/releases">View iOS builds →</a></div></article>
+          <article><h3>Web</h3><p>Host the static app on HTTPS. Office requires the response headers described in the included README.</p><div data-platform="web"><a href="https://github.com/taskasaur/taskasaur/releases">View web bundles →</a></div></article>
+          <article><h3>Docker peer</h3><p>An independent always-on device. The Compose download starts with storage-only mode and the frontend disabled.</p><div data-platform="server"><a href="https://github.com/taskasaur/taskasaur/releases">View server downloads →</a></div><a href="https://github.com/taskasaur/taskasaur/blob/main/docs/self-hosting.md">Setup and pairing instructions →</a></article>
+          <article><h3>Verify or build it</h3><p>Every release includes SHA-256 checksums. Browse the source, read the changes, or build for your own device.</p><div data-platform="checksums"><a href="https://github.com/taskasaur/taskasaur/releases">Release notes and checksums →</a></div><a href="https://github.com/taskasaur/taskasaur">Source code →</a></article>
+        </div>
+        <noscript><p>JavaScript is off. Use the GitHub links above to choose a release and download its assets.</p></noscript>
       </section>
 
       <section class="philosophy page-section dino-boundary" id="product" data-accent="#8fd3ff">
         <div class="dino-silhouette jungle-one" aria-hidden="true"></div>
         <div class="philosophy-inner">
           <div class="section-heading centered">
-            <h2>Stop switching apps just to understand your work.</h2>
+            <h2>Your devices. One shared workspace.</h2>
           </div>
           <div class="principle-grid">
-            <article><span aria-hidden="true">⌘</span><h3>One task interface</h3><p>Review mail, GitHub issues, Markdown tasks, and internal tasks together instead of managing each source in a different app.</p></article>
-            <article><span aria-hidden="true">✦</span><h3>AI-readable by design</h3><p>Your database is a structured text file. AI tools can read it, reason across it, and act directly on the work without a proprietary data layer.</p></article>
-            <article><span aria-hidden="true">↻</span><h3>Free device syncing</h3><p>Keep the CSDB file in the file-syncing service you already use and carry the same task database between desktop and mobile without a required subscription.</p></article>
-            <article><span aria-hidden="true">{ }</span><h3>A wrapper without a forced schema</h3><p>Taskasaur organizes your existing sources without demanding that every task look the same. Custom fields let each workflow retain the structure it needs.</p></article>
+            <article><span aria-hidden="true">⌘</span><h3>Start where you are</h3><p>Create an internal workspace on this device, join an existing one, or open a portable workspace file. No hosted account or central application server is required.</p></article>
+            <article><span aria-hidden="true">↻</span><h3>Keep working offline</h3><p>Approved devices exchange changes when they can connect. Choose which devices keep records and file versions, with a verified handoff before removing a copy.</p></article>
+            <article><span aria-hidden="true">✦</span><h3>Choose your tools</h3><p>Install Tasks, Calendar, Reminders, Mail, Office, Automations, and more. Core handles shared storage, credentials, search, and communication between plugins.</p></article>
+            <article><span aria-hidden="true">{ }</span><h3>Make the structure yours</h3><p>Start with the fields each item requires. Add field templates or your own typed columns, then use the same filtering, sorting, and grouping across plugins.</p></article>
           </div>
         </div>
       </section>
 
       <section class="feature-detail page-section" id="track" data-accent="#123f60">
-        <div class="detail-copy"><p class="kicker">Track</p><h2>Time with context built in.</h2><p>Start a live timer or create a session manually. Every field is yours to define: name it, choose its type, make it selectable, set defaults, connect references, or use it to filter the tasks relevant to a session.</p><ul><li>Live timers, manual sessions, and breaks</li><li>List, week, and month review views</li><li>Text, Markdown, numbers, dates, paths, selections, and references</li><li>Reusable presets and task-source filters</li></ul></div>
+        <div class="detail-copy"><p class="kicker">Tables that fit your work</p><h2>The fields you need.<br />The views you choose.</h2><p>Keep separate tables for different projects and workflows. A shared field system gives plugins consistent inputs, while you control column types, templates, and the number of values.</p><ul><li>Short tables, horizontally scrolling tables, and boards</li><li>Ordered filters, sorting, and nested groups</li><li>Folder views and breadcrumbs to explore each group</li><li>Reorder columns and switch them on or off</li></ul></div>
         <div class="spiral-panel" aria-label="Custom table headers moving inward along an editable spiral"><div class="field-spiral" id="fieldSpiral"><i class="edit-cursor hidden" aria-hidden="true">▌</i></div></div>
       </section>
 
       <section class="feature-detail reverse page-section" id="tasks" data-accent="#205b83">
-        <div class="detail-copy"><p class="kicker">Tasks</p><h2>Every source. One working view.</h2><p>See internal tasks beside Markdown files, GitHub issues, and linked mail. Change the presentation without changing where the work came from.</p><ul><li>Small or large table and Kanban views</li><li>Fields, grouping, filters, and multi-sort</li><li>Source-aware task creation and syncing</li><li>Track selections highlight the tasks that matter</li></ul></div>
-        <div class="source-panel" aria-label="Task sources flowing into Taskasaur"><div class="source-orbit"><i class="source-line" style="--i:0"></i><i class="source-line" style="--i:1"></i><i class="source-line" style="--i:2"></i><i class="source-line" style="--i:3"></i><div class="source-center">📦</div><span style="--i:0"><span class="source-content"><img class="source-logo" src="https://github.githubassets.com/favicons/favicon.png" alt="" /><b>GitHub Issues</b></span></span><span style="--i:1"><span class="source-content"><i class="markdown-mark">.md</i><b>Markdown</b></span></span><span style="--i:2"><span class="source-content">✉<b>Emails</b></span></span><span style="--i:3"><span class="source-content">✓<b>Internal Tasks</b></span></span></div></div>
+        <div class="detail-copy"><p class="kicker">Installable plugins</p><h2>Your tools, working together.</h2><p>Build a workspace around what you use. Optional plugins share core services and familiar components, with their own pages available beside the workspace breadcrumb.</p><ul><li>Tasks, time, reminders, calendars, and mail</li><li>Dashboard with active work and unified search</li><li>Search content and run registered commands together</li><li>One shared interface across supported platforms</li></ul><a class="text-link" href="https://github.com/taskasaur/taskasaur-plugin-inventory">Explore the plugin inventory →</a></div>
+        <div class="source-panel" aria-label="Plugins connected through Taskasaur core"><div class="source-orbit"><i class="source-line" style="--i:0"></i><i class="source-line" style="--i:1"></i><i class="source-line" style="--i:2"></i><i class="source-line" style="--i:3"></i><div class="source-center">📦</div><span style="--i:0"><span class="source-content">✓<b>Tasks</b></span></span><span style="--i:1"><span class="source-content">▦<b>Calendar</b></span></span><span style="--i:2"><span class="source-content">✉<b>Mail</b></span></span><span style="--i:3"><span class="source-content">⚡<b>Automations</b></span></span></div></div>
       </section>
 
       <section class="feature-detail page-section" id="focus" data-accent="#2b6f9b">
-        <div class="detail-copy"><p class="kicker">Focus</p><h2>Give one task the room it deserves.</h2><p>Use a preset or custom duration for deep work and breaks. A clear timer, selected task, and configurable completion alert keep the session deliberate.</p><ul><li>Focus and break modes</li><li>Pomodoro-ready presets and custom timing</li><li>Chime, bell, or gentle sound choices</li><li>Optional vibration patterns</li></ul></div>
+        <div class="detail-copy"><p class="kicker">Devices and automations</p><h2>Choose where the work runs.</h2><p>Create a TypeScript automation on one device and select the approved computer that will run it. See the capabilities and plugins it needs before enabling it.</p><ul><li>Per-item execution targets and on/off controls</li><li>Remote plugin installation on approved computers</li><li>Remote terminals on capable desktop and headless peers</li><li>Phones and browsers can control an approved host</li></ul><p class="capability-note">Background work and terminal hosting depend on each device’s capabilities and local permission settings.</p></div>
         <div class="computer-panel"><div class="computer"><div class="screen"><div class="pacman-track" aria-hidden="true"><i class="pacman"></i></div><strong id="focusCountdown">25:00</strong></div><div class="computer-base"></div></div></div>
       </section>
 
       <section class="data-control page-section dino-boundary" id="data" data-accent="#103852">
         <div class="dino-silhouette jungle-two" aria-hidden="true"></div>
-        <div class="section-heading"><p class="kicker">Data control</p><h2>Plain-text databases.<br />No mystery layer.</h2><p>Taskasaur uses CSDB: a portable text database format that combines schemas, metadata, and CSV-style table data in readable files you control.</p></div>
-        <div class="code-card"><div class="code-title"><span>work.csdb</span><b>TEXT DATABASE</b></div><pre><code>--- csdb
-format: CSDB
-version: 1
-name: my-work
-tables:
-  - sessions
-  - tasks
-
---- table:sessions:data
-id,start_time,project
-…</code></pre></div>
-        <div class="data-points"><span><b>Portable</b>Move or back up a normal file.</span><span><b>Structured</b>Schemas keep data reliable.</span><span><b>Flexible</b>Custom fields fit your work.</span><span><b>Owned by you</b>Choose internal or path storage.</span></div>
-        <a class="text-link" href="https://csvdatabase.net">Learn about CSDB at csvdatabase.net →</a>
+        <div class="section-heading"><p class="kicker">Portable workspaces</p><h2>Your whole workspace.<br />One .taskasaur file.</h2><p>Save records, tables, files, plugin credentials, and device connections together, with optional password encryption. Workspace history travels with the file so it can reconnect and synchronize later.</p></div>
+        <div class="code-card workspace-package"><div class="code-title"><span>work.taskasaur</span><b>YOUR WORKSPACE</b></div><ul><li>Tables, records, and custom fields</li><li>Files and retained versions</li><li>Plugin data and shared credentials</li><li>Approved connections and sync history</li></ul><p>Device identity, private settings, and caches stay on their own device.</p></div>
+        <div class="data-points"><span><b>Create</b>Start an internal or file workspace.</span><span><b>Join</b>Connect with device approval.</span><span><b>Open</b>Edit a live file where supported.</span><span><b>Import</b>Keep an internal copy without changing the source.</span></div>
+        <a class="text-link" href="https://github.com/taskasaur/taskasaur/blob/main/docs/workspace-files.md">How portable workspaces work →</a>
       </section>
 
       <section class="backend page-section" id="developers" data-accent="#174f78">
-        <div class="section-heading centered"><p class="kicker">Under the hood</p><h2>A local-first stack built to travel.</h2><p>The same React application runs across desktop and mobile surfaces, with native bridges handling files, tray controls, and platform behavior.</p></div>
-        <div class="stack-flow"><span><b>React + TypeScript</b><small>Interface</small></span><i>→</i><span><b>Zustand</b><small>Application state</small></span><i>→</i><span><b>CSDB</b><small>Data engine</small></span><i>→</i><span><b>Electron + Capacitor</b><small>macOS · Windows · Linux · iOS · Android</small></span></div>
+        <div class="section-heading centered"><p class="kicker">An open foundation</p><h2>Shared core.<br />Independent devices.</h2><p>React and TypeScript provide the interface. Automerge keeps mergeable workspace history, and libp2p connects approved peers. Run an optional always-on Docker peer for storage, relay, or background work.</p></div>
+        <div class="stack-flow"><span><b>React + TypeScript</b><small>Shared interface and plugin SDK</small></span><i>→</i><span><b>Automerge + libp2p</b><small>History and peer synchronization</small></span><i>→</i><span><b>Electron + Capacitor</b><small>Desktop and mobile adapters</small></span><i>→</i><span><b>Headless + Docker</b><small>Optional always-on peer</small></span></div>
+        <div class="foundation-details"><article><h3>Documents, sheets, and slides</h3><p>The Office plugin embeds the upstream ZetaOffice / LibreOffice suite for ODT, ODS, and ODP editing, including offline use. It requires a platform with supported WebAssembly threading.</p><a href="https://github.com/taskasaur/taskasaur/blob/main/docs/office-engine.md">Office support and platform limits →</a></article><article><h3>A framework for your own plugins</h3><p>Use shared field types, storage, credentials, messaging, device selection, and UI components. Register pages and commands, and distribute an optional plugin through its own download URL.</p><a href="https://github.com/taskasaur/taskasaur/blob/main/docs/plugins/README.md">Read the plugin specification →</a></article></div>
       </section>
 
       <section class="dino-game" id="dinoGame" aria-label="T. rex obstacle jumping game">
@@ -98,7 +106,7 @@ id,start_time,project
 
       <section class="contribute page-section split" data-accent="#0b2f4a">
         <div><p class="kicker">Open source</p><h2>Help Taskasaur evolve.</h2></div>
-        <div class="prose"><p>Taskasaur is built in the open. Explore the code, report an issue, improve a workflow, or contribute a new source integration.</p><div class="actions"><a class="button primary" href="https://github.com/taskasaur/taskasaur">Visit the repository</a><a class="button quiet" href="https://github.com/taskasaur/taskasaur/issues">View issues</a></div></div>
+        <div class="prose"><p>Taskasaur is built in the open. Explore the code, report an issue, improve a workflow, or build a plugin.</p><div class="actions"><a class="button primary" href="https://github.com/taskasaur/taskasaur">Visit the repository</a><a class="button quiet" href="https://github.com/taskasaur/taskasaur/issues">View issues</a></div></div>
       </section>
 
     </main>
